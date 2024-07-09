@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfw638bjloc10"]
+
+[ext_resource type="Script" path="res://source/scripts/bullet.gd" id="1_1vbba"]
+[ext_resource type="Texture2D" uid="uid://bngmj7q8kewe5" path="res://source/assets/white_circle.png" id="1_ag51q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpd4w"]
+radius = 5.0
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_1vbba")
+
+[node name="WhiteCircle" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ag51q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bpd4w")
+
+[node name="projectileDespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

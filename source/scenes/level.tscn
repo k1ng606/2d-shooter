@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5omwakxv2nsk"]
+
+[ext_resource type="Script" path="res://source/scripts/level.gd" id="1_7bapf"]
+[ext_resource type="PackedScene" uid="uid://dxgknlvbbsu7h" path="res://source/scenes/player.tscn" id="1_w8k0s"]
+[ext_resource type="PackedScene" uid="uid://cs6vd4gyfcwcx" path="res://source/scenes/obstacle_1.tscn" id="3_3d5hc"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_7bapf")
+
+[node name="obstacle1" parent="." instance=ExtResource("3_3d5hc")]
+position = Vector2(375, 292)
+
+[node name="projectileContainer" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource("1_w8k0s")]
+position = Vector2(522, 276)
+rotation = 1.74846e-07
+
+[node name="enemy spawn maker" type="Marker2D" parent="."]
+position = Vector2(975, 181)
+
+[node name="enemy spawn timer" type="Timer" parent="."]
+autostart = true
